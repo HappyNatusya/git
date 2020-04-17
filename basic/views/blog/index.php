@@ -13,7 +13,7 @@ use yii\widgets\LinkPager;
 					<div class="breadcrumb-menu">
 						<ul>
 						<li><?= Html::a('Главная', [Yii::$app->homeUrl]) ?></li>
-									<li><span>Блог</span></li>
+									<li><span>Блоывааываываг</span></li>
 								</ul>
 							</div>
 						</div>
