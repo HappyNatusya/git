@@ -32,7 +32,7 @@ class Orders extends \yii\db\ActiveRecord
         return [
             [['name', 'email', 'phone', 'date', 'description'], 'required'],
             // [['date'], 'safe', 'unique'],
-            [['phone'], 'string', 'min' => 5, 'max' => 15],
+            [['phone'], 'string', 'min' => 15, 'max' => 15],
             [['date'], 'unique'],
             [['email'], 'email'],
             [['name', 'email'], 'string', 'max' => 255],
