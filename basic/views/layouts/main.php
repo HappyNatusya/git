@@ -107,12 +107,12 @@ AppAsset::register($this);
               ['label' => 'Услуги', 'url' => ['/orders/create']],
 			  ['label' => 'FAQ', 'url' => ['/faq']],
 			  ]],
-            
-                    
+       
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['auth/login']]
             ) : (
-                '<li>'
+				'<li>'
+				. Html::beginForm(['/auth/logout'], 'post')
                 . Html::submitButton(
 					'Logout (' . Yii::$app->user->identity->name . ')',
 					['class' => 'menu-area floatright hidden-xs']

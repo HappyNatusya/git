@@ -27,7 +27,7 @@ class Module extends \yii\base\Module
                 'class' =>  AccessControl::className(),
                 'denyCallback'  =>  function($rule, $action)
                 {
-                    throw new \yii\web\NotFoundHttpException();
+                    throw new \yii\web\NotFoundHttpException('У Вас нет доступа');
                 },
                 'rules' =>  [
                     [
