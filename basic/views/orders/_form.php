@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
-//use yii\captcha\Captcha;
+use yii\captcha\Captcha;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'contact-form',  'method' => 'post']); ?>
 	<div class="col-sm-12">
