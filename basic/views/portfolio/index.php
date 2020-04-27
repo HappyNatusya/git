@@ -11,7 +11,7 @@ $this->title = 'PhotoLife';
 				<div class="breadcrumb-text">
 					<div class="breadcrumb-menu">
 						<ul>
-							<li><?= Html::a('Главная', ['site/index']) ?></li>
+							<li><?= Html::a('Главная', Yii::$app->homeUrl) ?></li>
 							<li><span>Портфолио</span></li>
 						</ul>
 					</div>
@@ -43,4 +43,6 @@ $this->title = 'PhotoLife';
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
 		</div>

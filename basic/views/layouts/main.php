@@ -1,6 +1,4 @@
 <?php
-/* @var $this \yii\web\View */
-/* @var $content string */
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -8,7 +6,6 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -22,7 +19,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title>PhotoLife</title>
     <?php $this->head() ?>
-	
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -40,15 +36,14 @@ AppAsset::register($this);
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/60418531" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- метрика -->
-
+<!-- /метрика -->
 <!-- <header>
 			<div class="main-menu-area ptb-20">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3 col-sm-2">
 							<div class="logo">
-							<a href="<?= \yii\helpers\Url::home()?>"><?= Html::img('@web/web/img/logo/logo.PNG')?></a>
+							<a href="">logo</a>
 							</div>
 						</div>
 						<div class="col-md-9 col-sm-10">
@@ -75,7 +70,6 @@ AppAsset::register($this);
 										)
 										. Html::endForm() ?>
 									<?php endif;?>
-
 									</ul>
 								</nav>
 							</div>
@@ -100,14 +94,12 @@ AppAsset::register($this);
             ['label' => 'Обо мне', 'url' => ['@web/contact/create']],
 			['label' => 'Блог', 'url' => ['/blog']],
 			['label' => 'Ещё', 'url' => ['/site/activities'],
-           
             'options' => ['id' => 'down_menu'],			
             'items' => [
               ['label' => 'Портфолио', 'url' => ['/portfolio']],
               ['label' => 'Услуги', 'url' => ['/orders/create']],
 			  ['label' => 'FAQ', 'url' => ['/faq']],
 			  ]],
-       
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['auth/login']]
             ) : (
@@ -124,7 +116,6 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -133,64 +124,62 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 </header>
-
 <footer class="footer">
-			<div class="footer-area pt-80 pb-50">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4 col-sm-4">
-							<div class="single-footer text-center mb-30">
-								<div class="footer-icon">
-									<i class="fa fa-phone"></i>
-								</div>
-								<div class="footer-info">
-									<span>8 952 449 07 35 </span>
-								</div>
-							</div>
+	<div class="footer-area pt-80 pb-50">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<div class="single-footer text-center mb-30">
+						<div class="footer-icon">
+							<i class="fa fa-phone"></i>
 						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="single-footer text-center mb-30">
-								<div class="footer-icon">
-									<i class="fa fa-envelope"></i>
-								</div>
-								<div class="footer-info">
-									<span>Shatkova8952.rf@Gmail.com</span>
-								</div>
-							</div>
+						<div class="footer-info">
+							<span>8 952 449 07 35 </span>
 						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="single-footer text-center mb-30">
-								<div class="footer-icon">
-									<i class="fa fa-map-marker"></i>
-								</div>
-								<div class="footer-info">
-									<span>Нижегородская область, Богородск </span>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="single-footer text-center mb-30">
+						<div class="footer-icon">
+							<i class="fa fa-envelope"></i>
+						</div>
+						<div class="footer-info">
+							<span>Shatkova8952.rf@Gmail.com</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="single-footer text-center mb-30">
+						<div class="footer-icon">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<div class="footer-info">
+							<span>Нижегородская область, Богородск </span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="footer-bottom-area ptb-20">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="copyright">
-								<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i> Все права защищены</p>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="icon floatright">
-								<a href="https://vk.com/happy_natusya"><i class="fa fa-vk"></i></a>
-								<a href="https://www.facebook.com/happy.natusya/"><i class="fa fa-facebook"></i></a>
-								<a href="https://www.instagram.com/happy__natusya/"><i class="fa fa-instagram"></i></a>
-							</div>
-						</div>
+		</div>
+	</div>
+	<div class="footer-bottom-area ptb-20">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="copyright">
+						<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i> Все права защищены</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="icon floatright">
+						<a href="https://vk.com/happy_natusya" target="_blank"><i class="fa fa-vk"></i></a>
+						<a href="https://www.facebook.com/happy.natusya/" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.instagram.com/happy__natusya/" target="_blank"><i class="fa fa-instagram"></i></a>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 </footer>
-
 <?php $this->endBody() ?>
 </body>
 </html>
