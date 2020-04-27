@@ -9,12 +9,7 @@ $this->title = 'PhotoLife';
 ?>
 <?php
    
-    $title = $blogDet->name;
-    $url = '/blogDetails?id='.$blogDet->id;
-    $hashtags = 'теги';
-    $summary = 'Короткое описание';
-    $image_url = 'https://avatars.mds.yandex.net/get-pdb/1982751/501ff0c7-4534-45ec-b82f-05a3667e4719/s1200';
-    $description = 'Короткое описание';
+   
 	$views = $blogDet->views; //значение столбца в переменную
 	$views++; //прибавляем
 	Yii::$app->db->createCommand("UPDATE blog SET views=$views where id = $blogDet->id")->execute();
@@ -23,10 +18,7 @@ $dt = DateTime::createFromFormat('Y-m-d', $blogDet->date)->format('d.m.Y'); //и
 $text = $blogDet->content; // значение из столбца 
 $con = explode("&", $text); //разбиваем на массив
 
-// $img = $k['img']; //значение столбца
-// $img = explode(" ", $img); //разбиваем на массив
-// echo '?>
-		<!-- breadcrumb-banner-area -->
+?>
 		<div class="breadcrumb-banner-area bg-opacity bg-img ptb-100">
 			<div class="container">
 				<div class="row">
@@ -126,6 +118,7 @@ $con = explode("&", $text); //разбиваем на массив
 <!-- Put this div tag to the place, where the Comments block will be -->
 <div id="vk_comments"></div>
 <script type="text/javascript">
+
 VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
 </script>
 
@@ -161,3 +154,4 @@ VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
 				</div>
 			</div>
 		</div>
+		

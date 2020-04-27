@@ -20,6 +20,5 @@ use yii\captcha\Captcha;
 	<div class="col-sm-12">
     <?= $form->field($model, 'description')->textInput(['maxlength' => true, 'placeholder' => "Описание"]) ?>
 	</div>
-	
     <?= Html::submitButton('Отправить заявку', ['class' => 'submit', 'name' => 'contact-button']) ?>
 <?php ActiveForm::end(); ?>

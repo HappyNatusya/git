@@ -20,6 +20,8 @@ class PortfoliodetailsController extends Controller
     public function actionIndex($id)
     {
         $portfolio = Portfolio::findOne($id);
+  	if (empty($portfolio))
+        throw new \yii\web\HttpException(404, 'whis text nahoditsya v kontrollers');
         return $this->render('index', [
             'portfolio' => $portfolio,
         ]);

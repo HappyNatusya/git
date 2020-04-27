@@ -76,9 +76,6 @@ $mysqli = new mysqli('localhost', 'Shatkova', 'NLmMYLeB', 'Shatkova'); //под�
 $query = "set names utf8";
 $mysqli->query($query);
 
-$query1 = "SELECT * FROM comments";
-$results1 = $mysqli->query($query1);
-$nr1 = $results1->num_rows;//вывод кол-ва столбцов
 
 $query2 = "SELECT * FROM blog";
 $results2 = $mysqli->query($query2);
