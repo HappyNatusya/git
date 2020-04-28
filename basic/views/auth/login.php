@@ -10,18 +10,6 @@ use yii\bootstrap\ActiveForm;
                 
             </div>
         </div>
-
-        <!-- <div class="col-md-2">
-            <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
-<script type="text/javascript">
-  VK.init({apiId: 7348296});
-</script>
-
-<div id="vk_auth"></div>
-<script type="text/javascript">
-  VK.Widgets.Auth("vk_auth", {"width":250,"authUrl":"/auth/login-vk"});
-</script>
-        </div> -->
         <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
 <script type="text/javascript">
   VK.init({apiId: 7410215});
@@ -30,13 +18,8 @@ use yii\bootstrap\ActiveForm;
 <!-- VK Widget -->
 <div id="vk_auth"></div>
 <script type="text/javascript">
-  VK.Widgets.Auth("vk_auth", {"authUrl":"/auth/login-vk"});
+  VK.Widgets.Auth("vk_auth", {"width":250,"authUrl":"/auth/login-vk"});
 </script>
-
-
-
-
-
     </div>
 </div>
 

@@ -1,3 +1,1 @@
-<?php
-echo 'BAd';
-//RewriteCond %{HTTP_USER_AGENT} YaBrowser [NC]
+<h1 style="font-family: Arial; text-align: center; color: #464646">Ваш браузер устарел и не поддерживает наш сервис. Пожалуста, воспользуетесь более новым браузером</h1>

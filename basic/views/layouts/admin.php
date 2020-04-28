@@ -25,70 +25,41 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
-<header>
-			<div class="main-menu-area ptb-20">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-2">
-							<div class="logo">
-								<a href="index.php"><?= Html::img('@web/img/logo/1.png') ?></a>
-							</div>
-						</div>
-						<div class="col-md-9 col-sm-10">
-							<div class="menu-area floatright hidden-xs">
-								<nav>
-									<ul>
-										<li><?= Html::a('Общее', ['@web/admin']) ?></li>
-										<li><?= Html::a('Блог', ['@web/admin/blog']) ?></li>
-										<li><?= Html::a('Теги', ['@web/admin/tags']) ?></li>
-										<li><?= Html::a('Комментарии', ['@web/admin/comments']) ?></li>
-										<li><?= Html::a('Команда', ['/team']) ?></li>
-										<li><?= Html::a('Главная', ['@web/site/index']) ?></li>
-										<?php if(Yii::$app->user->isGuest):?>
-                            				<li><a href="<?= Url::toRoute(['auth/login'])?>">Login</a></li>
-                        				<?php else: ?>
-										<?= Html::beginForm(['/auth/logout'], 'post')
-										. Html::submitButton(
-											'Logout (' . Yii::$app->user->identity->name . ')',
-											['class' => 'btn btn-link logout', 'style'=>"padding-top:10px;"]
-										)
-										. Html::endForm() ?>
-									<?php endif;?>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+<?php $this->beginBody() ?>	
 <div class="wrap">
-    <?php
-    // NavBar::begin([
-    //     'brandLabel' => Yii::$app->name,
-    //     'brandUrl' => Yii::$app->homeUrl,
-    //     'options' => [
-    //         'class' => 'main-menu-area ptb-20 row col-md-9 col-sm-10 menu-area floatright hidden-xs',
-    //     ],
-    // ]);
-    // echo Nav::widget([
-    //     'options' => ['class' => 'navbar-nav navbar-right'],
-    //     'items' => [
-    //         ['label' => 'Главная', 'url' => ['/site/index']],
-    //         ['label' => 'О нас', 'url' => ['/about']],
-    //         ['label' => 'Портфолио', 'url' => ['/portfolio']],
-    //         ['label' => 'Блог', 'url' => ['/blog']],
-    //         ['label' => 'Еще', 'url' => ['/portfolio']],
-    //         ['label' => 'Профиль', 'url' => ['/portfolio']],
-    //         // ['label' => 'Архив', 'url' => ['/archive']],
-    //         // ['label' => 'Теги', 'url' => ['/tags']],
-    //         // ['label' => 'EXit', 'url' => ['/site/contact']],
-    //     ],
-    // ]);
-    // NavBar::end();
+<?php
+    NavBar::begin([
+        'brandLabel' => Yii::$app->name,
+        'brandUrl' => Yii::$app->homeUrl,
+        'options' => [
+            'class' => 'menu-area  hidden-xs',
+        ],
+    ]);
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => [
+            ['label' => 'Общее', 'url' => ['@web/admin']],
+            ['label' => 'Блог', 'url' => ['@web/admin/blog']],
+			['label' => 'Теги', 'url' => ['@web/admin/tags']],
+			['label' => 'Команда', 'url' => ['@web/admin/team']],
+			['label' => 'Главная', 'url' => [Yii::$app->homeUrl]],
+           
+            Yii::$app->user->isGuest ? (
+                ['label' => 'Login', 'url' => ['auth/login']]
+            ) : (
+				'<li>'
+				. Html::beginForm(['/auth/logout'], 'post')
+                . Html::submitButton(
+					'Logout (' . Yii::$app->user->identity->name . ')',
+					['class' => 'menu-area floatright hidden-xs']
+				)
+                . Html::endForm()
+                . '</li>'
+            )
+        ],
+    ]);
+    NavBar::end();
     ?>
-
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
