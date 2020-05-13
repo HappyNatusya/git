@@ -1,8 +1,6 @@
 <?php
-
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
-
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
@@ -48,8 +46,7 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-                
+            'rules' => [ 
             ],
         ],
     ],
@@ -58,7 +55,6 @@ $config = [
             'class' => 'app\modules\admin\Module',
         ],
     ],
-    
     'params' => $params,
     'name' => 'PhotoLife',
 ];
@@ -75,9 +71,9 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.43.156'],
+        // uncomment the following to add your IP if you are not connecting from localhost. 
+        'allowedIPs' => ['127.0.0.1', '::1', '176.59.108.67'],
+        // 'allowedIPs' => ['127.0.0.1', '::1', '192.168.137.254'],
     ];
 }
-
 return $config;

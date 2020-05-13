@@ -4,7 +4,15 @@ use yii\helpers\Url;
 use app\models\Blog;
 use app\models\Category;
 use yii\widgets\LinkPager;
+$this->title = 'Блог | PhotoLife - личный блог фотографа';
+$this->registerMetaTag(
+	['name' => 'keywords', 'content' => 'Блог страница линого блога']
+  );
+  $this->registerMetaTag(
+	['name' => 'description', 'content' => 'Блог фотографа личный блог PhotoLife']
+  );
 ?>
+<meta name="robots" content="all" />
 <div class="breadcrumb-banner-area bg-opacity bg-img ptb-100">
 	<div class="container">
 		<div class="row">

@@ -40,8 +40,12 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Общее', 'url' => ['@web/admin']],
             ['label' => 'Блог', 'url' => ['@web/admin/blog']],
-			['label' => 'Теги', 'url' => ['@web/admin/tags']],
+			['label' => 'Теги', 'url' => ['@web/admin/category']],
+			['label' => 'Контакты', 'url' => ['@web/admin/contact']],
+			['label' => 'Заказы', 'url' => ['@web/admin/orders']],
+			['label' => 'Портфолио', 'url' => ['@web/admin/portfolio']],
 			['label' => 'Команда', 'url' => ['@web/admin/team']],
+			['label' => 'User', 'url' => ['@web/admin/user']],
 			['label' => 'Главная', 'url' => [Yii::$app->homeUrl]],
            
             Yii::$app->user->isGuest ? (

@@ -22,6 +22,15 @@ class BlogController extends Controller
      */
     public function actionIndex($sort = '')
     {
+        $this->view->title = 'Блог | PhotoLife';
+        $this->view->registerMetaTag(
+        ['name' => 'keywords', 'content' => 'Блог сайта личного блога фотографа PhotoLife']
+        );
+        $this->view->registerMetaTag(
+        ['name' => 'description', 'content' => 'Краткое описание страницы']
+        );
+
+
         $blog = Blog::find()->orderBy($sort);  //выводим все записи
 
         //пагинация

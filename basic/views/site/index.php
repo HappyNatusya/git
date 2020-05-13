@@ -2,6 +2,13 @@
 use yii\helpers\Html;
 use app\models\Blog;
 use yii\helpers\Url;
+$this->title = 'PhotoLife - личный блог фотографа';
+$this->registerMetaTag(
+	['name' => 'keywords', 'content' => 'Главная страница линого блога']
+  );
+  $this->registerMetaTag(
+	['name' => 'description', 'content' => 'Блог фотографа личный блог PhotoLife']
+  );
 ?>
 <meta name="yandex-verification" content="abc9e53b76a7e628" />
 <div class="slider-area">
@@ -11,7 +18,7 @@ use yii\helpers\Url;
 				<div class="slider-text">
 					<h3>Добро</h3>
 					<span>пожаловать в </span>
-					<p>Основная тема блога — фотография и профессия фотографа,<br>и прежде всего — вопросы творчества, продвижения, перспектив и вдохновения.</p>
+					<p>личный блог фотографа PhotoLife Основная тема блога — фотография и профессия фотографа,<br>и прежде всего — вопросы творчества, продвижения, перспектив и вдохновения.</p>
 				</div>
 			</div>
 		</div>
@@ -26,7 +33,6 @@ use yii\helpers\Url;
 		</div>
 	</div>
 </div>
-
 <div class="media-area pt-100 pb-70">
 	<div class="container">
 		<div class="row">

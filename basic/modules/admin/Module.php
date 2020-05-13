@@ -34,6 +34,9 @@ class Module extends \yii\base\Module
                         'allow' =>  true,
                         'matchCallback' =>  function($rule, $action)
                         {
+                            if(Yii::$app->user->isGuest){
+                                throw new \yii\web\NotFoundHttpException('У Вас нет доступа');
+                            }
                             return Yii::$app->user->identity->isAdmin;
                         }
                     ]

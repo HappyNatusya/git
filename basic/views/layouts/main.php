@@ -6,6 +6,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+header("Cache-control: max-age=31536000");
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -13,11 +14,11 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-control" content="public">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="yandex-verification" content="abc9e53b76a7e628" />
-    <?= Html::csrfMetaTags() ?>
-    <title>PhotoLife</title>
+    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -79,6 +80,8 @@ AppAsset::register($this);
 			</div>
 		</header>
 <header> -->
+<header>
+	
     <?php
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
@@ -98,7 +101,6 @@ AppAsset::register($this);
             'items' => [
               ['label' => 'Портфолио', 'url' => ['/portfolio']],
               ['label' => 'Услуги', 'url' => ['/orders/create']],
-			  ['label' => 'FAQ', 'url' => ['/faq']],
 			  ]],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['auth/login']]

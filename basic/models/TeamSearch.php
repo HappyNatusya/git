@@ -19,7 +19,7 @@ class TeamSearch extends Team
     {
         return [
             [['id'], 'integer'],
-            [['name', 'family', 'photo', 'job', 'vk', 'insta', 'fb', 'idLogin'], 'safe'],
+            [['photo', 'name', 'family', 'insta', 'vk', 'fb', 'job'], 'safe'],
         ];
     }
 
@@ -62,14 +62,13 @@ class TeamSearch extends Team
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
+        $query->andFilterWhere(['like', 'photo', $this->photo])
+            ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'family', $this->family])
-            ->andFilterWhere(['like', 'photo', $this->photo])
-            ->andFilterWhere(['like', 'job', $this->job])
-            ->andFilterWhere(['like', 'vk', $this->vk])
             ->andFilterWhere(['like', 'insta', $this->insta])
+            ->andFilterWhere(['like', 'vk', $this->vk])
             ->andFilterWhere(['like', 'fb', $this->fb])
-            ->andFilterWhere(['like', 'idLogin', $this->idLogin]);
+            ->andFilterWhere(['like', 'job', $this->job]);
 
         return $dataProvider;
     }

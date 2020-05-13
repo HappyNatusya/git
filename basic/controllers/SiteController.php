@@ -65,39 +65,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->title = 'PhotoLife - личный блог фотографа';
+        $this->view->registerMetaTag(
+        ['name' => 'keywords', 'content' => 'Главная страница сайта личного блога фотографа PhotoLife']
+        );
+        $this->view->registerMetaTag(
+        ['name' => 'description', 'content' => 'Краткое описание страницы']
+        );
         return $this->render('index');
     }
-
-
-    
-// public function actionSignup(){
-//     if (!Yii::$app->user->isGuest) {
-//     return $this->goHome();
-//     }
-//     $model = new SignupForm();
-//     if ($model->load(Yii::$app->request->post())) {
-//         $model->save();
-//     }
-//     return $this->render('signup', compact('model'));
-//    }
-
-   public function actionSignup(){
-    if (!Yii::$app->user->isGuest) {
-        return $this->goHome();
-    }
-    $model = new SignupForm();
-    if($model->load(\Yii::$app->request->post()) && $model->validate()){
-        $user = new User();
-        $user->username = $model->username;
-        $user->password = \Yii::$app->security->generatePasswordHash($model->password);
-        if($user->save()){
-            return $this->goHome();
-        }
-    }
- 
-    return $this->render('signup', compact('model'));
-   }
-
 
 
     /**
